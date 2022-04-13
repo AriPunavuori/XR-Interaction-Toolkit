@@ -59,3 +59,20 @@ Setup project for XR
 - Try grabbing from edges (Snaps to middle of object)
 - Add AdvancedInteraction component to Grab Interactble
 - Confirm that grabbing works from all parts of Grab Interactable
+
+8. UI_Interaction
+
+- Create a UI Canvas (XR version; contains Tracked Device Graphic Raycaster)
+- Set position to 1.25f on Y-Axis and 2 on the Z-Axis
+- Set width and height to 1
+- Add UIInteraction component to Canvas GO
+- Add TMPro button as a child
+- Set the button Rect Transform to stretch from left to right and height to .4f and pos -.25f on Y-Axis
+- Add Canvas GO and assign UIInteraction -> BTN_ChangeText method to buttons OnClick
+- Confirm button working with left controller (point and pull trigger button)
+
+-------------- Boss Level --------------
+
+9. UI_Interaction_Advanced
+
+- Figure out how gaze UI should work
