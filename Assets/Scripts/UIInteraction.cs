@@ -9,33 +9,33 @@ public class UIInteraction : MonoBehaviour
     
     public Image loading;
 
-    float hoverStart;
-    float hoverTime = 1f;
-    float resetTime = 1f;
+    private float _hoverStart;
+    private const float HoverTime = 1f;
+    private const float ResetTime = 1f;
 
     public void BTN_ChangeText()
     {
         buttonTextfield.text = "Ouch!";
-        Invoke("ResetPressButton", resetTime);
+        Invoke(nameof(ResetPressButton), ResetTime);
     }
 
     public void HOVER_Enter()
     {
-        Invoke("ChangeHoverButtonText", hoverTime);
-        hoverStart = Time.time;
+        Invoke(nameof(ChangeHoverButtonText), HoverTime);
+        _hoverStart = Time.time;
         LoadingIndicator();
     }
 
     public void HOVER_Exit()
     {
-        CancelInvoke("ChangeHoverButtonText");
-        hoverStart = 0;
+        CancelInvoke(nameof(ChangeHoverButtonText));
+        _hoverStart = 0;
     }
 
     void ChangeHoverButtonText()
     {
         hoverTextfield.text = "Stop Gazing!";
-        Invoke("ResetHoverButton", resetTime);
+        Invoke(nameof(ResetHoverButton), ResetTime);
     }
 
     void ResetPressButton()
@@ -50,10 +50,10 @@ public class UIInteraction : MonoBehaviour
 
     void LoadingIndicator()
     {        
-        loading.fillAmount = Mathf.Lerp(0f, 1f, (Time.time - hoverStart) / hoverTime); 
+        loading.fillAmount = Mathf.Lerp(0f, 1f, (Time.time - _hoverStart) / HoverTime); 
 
-        if (Time.time < hoverStart + hoverTime)        
-            Invoke("LoadingIndicator", .01f);            
+        if (Time.time < _hoverStart + HoverTime)        
+            Invoke(nameof(LoadingIndicator), .01f);            
         else
             loading.fillAmount = 0f;
     }

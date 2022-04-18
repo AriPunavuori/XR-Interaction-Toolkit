@@ -57,7 +57,7 @@ Setup project for XR
 
 - Scale x on Grab Interactable to .75f
 - Try grabbing from edges (Snaps to middle of object)
-- Add AdvancedInteraction component to Grab Interactble
+- Add AdvancedInteraction component to Grab Interactable
 - Confirm that grabbing works from all parts of Grab Interactable
 
 8. UI_Interaction
@@ -68,6 +68,8 @@ Setup project for XR
 - Add UIInteraction component to Canvas GO
 - Add TMPro button as a child
 - Set the button Rect Transform to stretch from left to right and height to .4f and pos -.25f on Y-Axis
+- Set Text Rect Transform to stretch everywhere
+- Set font size to .15 
 - Add Canvas GO and assign UIInteraction -> BTN_ChangeText method to buttons OnClick
 - Confirm button working with left controller (point and pull trigger button)
 
