@@ -30,8 +30,8 @@ Setup project for XR
 
 3. Locomotion_Teleportation
 
-- Add Teleportation component to XROrigin
-- Add Teleportation are component to plane
+- Add Teleportation Provider component to XROrigin
+- Add Teleportation area component to plane
 - Confirm that teleporting is working (Triggers with Grip button on both controllers when has valid target)
 
 4. Locomotion_Continuous_Move
@@ -49,7 +49,7 @@ Setup project for XR
 
 - Remove XR Interactor Line Visual, Line Renderer and Ray Interactor components from right hand
 - Add Direct Interactor component to right hand
-- Add Sphere Collider component to right hand, scale to .1f and set it as a trigger
+- Add Sphere Collider component to right hand, set radius to 0.05f and set it as a trigger
 - Add Sphere gameobject as a child of right hand, scale to .1f and remove Sphere Collider component (Just for visuals)
 - Confirm that direct interaction is working (Put controller on object and press Grip button)
 
@@ -71,6 +71,7 @@ Setup project for XR
 - Set Text Rect Transform to stretch everywhere
 - Set font size to .15 
 - Add Canvas GO and assign UIInteraction -> BTN_ChangeText method to buttons OnClick
+- Set buttons text GO to button text slot in UIInteraction component
 - Confirm button working with left controller (point and pull trigger button)
 
 -------------- Boss Level --------------
